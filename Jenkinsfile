@@ -1,9 +1,20 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                cmd 'python --version'
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
