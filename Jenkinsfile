@@ -1,4 +1,12 @@
 #!/usr/bin/env groovy
-node {
-    echo "Hello World!"
+pipeline {
+  agent { docker 'python:3.5.1' }
+  stages {
+    stage('build') {
+      steps {
+        sh 'pip --version'
+        sh 'python --version'
+      }
+    }
+  }
 }
